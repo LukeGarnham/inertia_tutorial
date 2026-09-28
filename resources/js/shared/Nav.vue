@@ -1,25 +1,27 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import NavLink from "./NavLink.vue";
 </script>
 
 <template>
     <nav class="mt-6">
-        <ul>
-            <li class="flex gap-x-3">
-                <Link class="text-blue-500 hover:underline" href="/">Home</Link>
-                <Link class="text-blue-500 hover:underline" href="/users"
-                    >Users</Link
+        <ul class="flex gap-x-3">
+            <li>
+                <NavLink href="/" :active="$page.component === 'Home'">
+                    Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink href="/users" :active="$page.component === 'Users'">
+                    Users
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    href="/settings"
+                    :active="$page.component === 'Settings'"
                 >
-                <Link class="text-blue-500 hover:underline" href="/settings"
-                    >Settings</Link
-                >
-                <Link
-                    class="text-blue-500 hover:underline"
-                    href="/logout"
-                    method="post"
-                    as="button"
-                    >Log Out</Link
-                >
+                    Settings
+                </NavLink>
             </li>
         </ul>
     </nav>
