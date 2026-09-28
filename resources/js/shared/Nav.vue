@@ -3,12 +3,23 @@ import { Link } from "@inertiajs/vue3";
 </script>
 
 <template>
-    <nav>
+    <nav class="mt-6">
         <ul>
-            <li>
-                <Link href="/">Home</Link>
-                <Link href="/users">Users</Link>
-                <Link href="/settings">Settings</Link>
+            <li class="flex gap-x-3">
+                <Link class="text-blue-500 hover:underline" href="/">Home</Link>
+                <Link class="text-blue-500 hover:underline" href="/users"
+                    >Users</Link
+                >
+                <Link class="text-blue-500 hover:underline" href="/settings"
+                    >Settings</Link
+                >
+                <Link
+                    class="text-blue-500 hover:underline"
+                    href="/logout"
+                    method="post"
+                    as="button"
+                    >Log Out</Link
+                >
             </li>
         </ul>
     </nav>
