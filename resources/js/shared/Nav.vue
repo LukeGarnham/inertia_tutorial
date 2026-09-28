@@ -3,8 +3,8 @@ import NavLink from "./NavLink.vue";
 </script>
 
 <template>
-    <nav class="mt-6">
-        <ul class="flex gap-x-3">
+    <nav>
+        <ul class="flex space-x-4">
             <li>
                 <NavLink href="/" :active="$page.component === 'Home'">
                     Home
