@@ -1,6 +1,6 @@
 <script setup>
-import Layout from "@/shared/Layout.vue";
-import { Link } from "@inertiajs/vue3";
+import Layout from '@/shared/Layout.vue';
+import { Link } from '@inertiajs/vue3';
 defineProps({
     time: String,
 });
