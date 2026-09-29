@@ -1,8 +1,7 @@
 <script setup>
 import Layout from '@/shared/Layout.vue';
-import { Link } from '@inertiajs/vue3';
 defineProps({
-    time: String,
+    users: Array,
 });
 defineOptions({
     layout: Layout,
@@ -12,8 +11,7 @@ defineOptions({
 <template>
     <Head title="Users"></Head>
     <h1 class="text-3xl">Users</h1>
-    <div style="margin-top: 1500px">
-        <p>The current time is {{ time }}.</p>
-        <Link href="/users" class="text-blue-500" preserve-scroll>Refresh</Link>
-    </div>
+    <ul>
+        <li v-for="user in users" :key="user.id" v-text="user.name"></li>
+    </ul>
 </template>
