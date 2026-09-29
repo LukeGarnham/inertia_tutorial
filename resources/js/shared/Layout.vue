@@ -10,6 +10,13 @@ const user = computed(() => {
 </script>
 
 <template>
+    <Head title="My App">
+        <meta
+            name="description"
+            content="This is a fallback description."
+            head-key="description"
+        />
+    </Head>
     <section class="bg-gray-200 p-6">
         <header class="flex justify-between align-middle">
             <div class="flex justify-items-start gap-3 align-middle">

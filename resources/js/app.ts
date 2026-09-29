@@ -1,9 +1,9 @@
-import { createInertiaApp, Link } from '@inertiajs/vue3';
+import { createInertiaApp, Head, Link } from '@inertiajs/vue3';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 void createInertiaApp({
-    title: (title) => (title ? `${title} - ${appName}` : appName),
+    title: (title) => (title ? `${title} | ${appName}` : appName),
     withApp: (app) => {
         app.directive('focus', {
             mounted: (el: HTMLElement, shouldFocus) => {
@@ -13,6 +13,7 @@ void createInertiaApp({
             },
         });
         app.component('Link', Link); // Import the Link component and make it available globally to the app.
+        app.component('Head', Head); // Import the Link component and make it available globally to the app.
     },
     progress: {
         color: '#4B5563',

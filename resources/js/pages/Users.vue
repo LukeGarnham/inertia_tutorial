@@ -10,6 +10,7 @@ defineOptions({
 </script>
 
 <template>
+    <Head title="Users"></Head>
     <h1 class="text-3xl">Users</h1>
     <div style="margin-top: 1500px">
         <p>The current time is {{ time }}.</p>
