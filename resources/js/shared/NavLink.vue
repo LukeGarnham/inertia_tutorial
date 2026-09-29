@@ -4,7 +4,10 @@ defineProps({
 });
 </script>
 <template>
-    <Link class="text-blue-500 hover:underline" :class="{ 'font-bold underline': active, }">
-    <slot />
+    <Link
+        class="text-blue-500 hover:underline"
+        :class="{ 'font-bold underline': active }"
+    >
+        <slot />
     </Link>
 </template>
