@@ -1,20 +1,17 @@
 <script setup>
 import Layout from '@/shared/Layout.vue';
-import { reactive } from 'vue';
-import { router } from '@inertiajs/vue3';
-defineProps({
-    errors: Object,
-});
+import { useForm } from '@inertiajs/vue3';
+
 defineOptions({
     layout: Layout,
 });
-let form = reactive({
+let form = useForm({
     name: '',
     email: '',
     password: '',
 });
 let submit = function () {
-    router.post('/users', form);
+    form.post('/users');
 };
 </script>
 
@@ -39,8 +36,8 @@ let submit = function () {
                 required
             />
             <div
-                v-if="errors.name"
-                v-text="errors.name"
+                v-if="form.errors.name"
+                v-text="form.errors.name"
                 class="text-red-500 text-xs mt-1"
             ></div>
         </div>
@@ -60,8 +57,8 @@ let submit = function () {
                 required
             />
             <div
-                v-if="errors.email"
-                v-text="errors.email"
+                v-if="form.errors.email"
+                v-text="form.errors.email"
                 class="text-red-500 text-xs mt-1"
             ></div>
         </div>
@@ -81,8 +78,8 @@ let submit = function () {
                 required
             />
             <div
-                v-if="errors.email"
-                v-text="errors.email"
+                v-if="form.errors.email"
+                v-text="form.errors.email"
                 class="text-red-500 text-xs mt-1"
             ></div>
         </div>
@@ -90,6 +87,7 @@ let submit = function () {
             <button
                 type="submit"
                 class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+                :disabled="form.processing"
             >
                 Submit
             </button>
