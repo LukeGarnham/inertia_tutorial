@@ -3,6 +3,7 @@ import Layout from '@/shared/Layout.vue';
 import Pagination from '@/shared/Pagination.vue';
 import { ref, watch } from 'vue';
 import { Link, router } from '@inertiajs/vue3';
+import debounce from 'lodash/debounce';
 let props = defineProps({
     users: Object,
     filters: Object,
@@ -11,16 +12,20 @@ defineOptions({
     layout: Layout,
 });
 let search = ref(props.filters.search);
-watch(search, value => {
-    router.get(
-        '/users',
-        { search: value },
-        {
-            preserveState: true, // preserveState prevents Vue components from resetting/remounting.
-            replace: true, // replace ensures that each time the query string changes, we replace the new entry in the history stack (so hitting back btn doesn't cycle back through search string)
-        },
-    );
-});
+watch(
+    search,
+    debounce(value => {
+        console.log('triggered');
+        router.get(
+            '/users',
+            { search: value },
+            {
+                preserveState: true, // preserveState prevents Vue components from resetting/remounting.
+                replace: true, // replace ensures that each time the query string changes, we replace the new entry in the history stack (so hitting back btn doesn't cycle back through search string)
+            },
+        );
+    }, 500),
+);
 </script>
 
 <template>
