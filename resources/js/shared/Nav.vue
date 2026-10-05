@@ -11,7 +11,7 @@ import NavLink from './NavLink.vue';
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/users" :active="$page.component === 'Users'">
+                <NavLink href="/users/" :active="$page.component === 'Users'">
                     Users
                 </NavLink>
             </li>
