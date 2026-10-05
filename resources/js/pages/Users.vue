@@ -15,7 +15,10 @@ watch(search, value => {
     router.get(
         '/users',
         { search: value },
-        { preserveState: true, replace: true },
+        {
+            preserveState: true, // preserveState prevents Vue components from resetting/remounting.
+            replace: true, // replace ensures that each time the query string changes, we replace the new entry in the history stack (so hitting back btn doesn't cycle back through search string)
+        },
     );
 });
 </script>
