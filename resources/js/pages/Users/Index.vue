@@ -2,7 +2,7 @@
 import Layout from '@/shared/Layout.vue';
 import Pagination from '@/shared/Pagination.vue';
 import { ref, watch } from 'vue';
-import { router } from '@inertiajs/vue3';
+import { Link, router } from '@inertiajs/vue3';
 let props = defineProps({
     users: Object,
     filters: Object,
@@ -27,7 +27,12 @@ watch(search, value => {
     <Head title="Users"></Head>
 
     <div class="flex justify-between mb-6">
-        <h1 class="text-3xl">Users</h1>
+        <div class="flex items-center">
+            <h1 class="text-3xl">Users</h1>
+            <Link href="/users/create" class="text-blue-500 text-sm ml-2"
+                >New User</Link
+            >
+        </div>
         <input
             type="text"
             placeholder="Search.."

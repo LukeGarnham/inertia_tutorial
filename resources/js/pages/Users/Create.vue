@@ -2,6 +2,9 @@
 import Layout from '@/shared/Layout.vue';
 import { reactive } from 'vue';
 import { router } from '@inertiajs/vue3';
+defineProps({
+    errors: Object,
+});
 defineOptions({
     layout: Layout,
 });
@@ -35,6 +38,11 @@ let submit = function () {
                 id="name"
                 required
             />
+            <div
+                v-if="errors.name"
+                v-text="errors.name"
+                class="text-red-500 text-xs mt-1"
+            ></div>
         </div>
         <div class="mb-6">
             <label
@@ -51,6 +59,11 @@ let submit = function () {
                 id="email"
                 required
             />
+            <div
+                v-if="errors.email"
+                v-text="errors.email"
+                class="text-red-500 text-xs mt-1"
+            ></div>
         </div>
         <div class="mb-6">
             <label
@@ -67,6 +80,11 @@ let submit = function () {
                 id="password"
                 required
             />
+            <div
+                v-if="errors.email"
+                v-text="errors.email"
+                class="text-red-500 text-xs mt-1"
+            ></div>
         </div>
         <div class="mb-6">
             <button
