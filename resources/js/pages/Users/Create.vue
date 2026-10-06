@@ -19,17 +19,17 @@ let submit = function () {
     <Head title="Create User"></Head>
     <h1 class="text-3xl">Create New User</h1>
 
-    <form @submit.prevent="submit" class="max-w-md mx-auto mt-8">
+    <form @submit.prevent="submit" class="mx-auto mt-8 max-w-md">
         <div class="mb-6">
             <label
                 for="name"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="mb-2 block text-xs font-bold text-gray-700 uppercase"
             >
                 Name
             </label>
             <input
                 v-model="form.name"
-                class="border border-gray-400 p-2 w-full"
+                class="w-full border border-gray-400 p-2"
                 type="text"
                 name="name"
                 id="name"
@@ -38,19 +38,19 @@ let submit = function () {
             <div
                 v-if="form.errors.name"
                 v-text="form.errors.name"
-                class="text-red-500 text-xs mt-1"
+                class="mt-1 text-xs text-red-500"
             ></div>
         </div>
         <div class="mb-6">
             <label
                 for="email"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="mb-2 block text-xs font-bold text-gray-700 uppercase"
             >
                 Email
             </label>
             <input
                 v-model="form.email"
-                class="border border-gray-400 p-2 w-full"
+                class="w-full border border-gray-400 p-2"
                 type="email"
                 name="email"
                 id="email"
@@ -59,19 +59,19 @@ let submit = function () {
             <div
                 v-if="form.errors.email"
                 v-text="form.errors.email"
-                class="text-red-500 text-xs mt-1"
+                class="mt-1 text-xs text-red-500"
             ></div>
         </div>
         <div class="mb-6">
             <label
                 for="password"
-                class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                class="mb-2 block text-xs font-bold text-gray-700 uppercase"
             >
                 Password
             </label>
             <input
                 v-model="form.password"
-                class="border border-gray-400 p-2 w-full"
+                class="w-full border border-gray-400 p-2"
                 type="password"
                 name="password"
                 id="password"
@@ -80,13 +80,13 @@ let submit = function () {
             <div
                 v-if="form.errors.password"
                 v-text="form.errors.password"
-                class="text-red-500 text-xs mt-1"
+                class="mt-1 text-xs text-red-500"
             ></div>
         </div>
         <div class="mb-6">
             <button
                 type="submit"
-                class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+                class="rounded bg-blue-400 px-4 py-2 text-white hover:bg-blue-500"
                 :disabled="form.processing"
             >
                 Submit

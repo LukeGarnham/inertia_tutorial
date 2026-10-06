@@ -1,5 +1,4 @@
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3';
-import Layout from './shared/Layout.vue';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 

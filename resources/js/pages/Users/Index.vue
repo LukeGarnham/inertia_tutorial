@@ -14,7 +14,7 @@ defineOptions({
 let search = ref(props.filters.search);
 watch(
     search,
-    debounce(value => {
+    debounce((value) => {
         console.log('triggered');
         router.get(
             '/users',
@@ -31,23 +31,23 @@ watch(
 <template>
     <Head title="Users"></Head>
 
-    <div class="flex justify-between mb-6">
+    <div class="mb-6 flex justify-between">
         <div class="flex items-center">
             <h1 class="text-3xl">Users</h1>
-            <Link href="/users/create" class="text-blue-500 text-sm ml-2"
+            <Link href="/users/create" class="ml-2 text-sm text-blue-500"
                 >New User</Link
             >
         </div>
         <input
             type="text"
             placeholder="Search.."
-            class="border px-2 rounded-xl"
+            class="rounded-xl border px-2"
             v-model="search"
         />
     </div>
 
-    <table class="table-auto min-w-full divide-y divide-gray-200">
-        <tbody class="bg-white divide-y divide-gray-200">
+    <table class="min-w-full table-auto divide-y divide-gray-200">
+        <tbody class="divide-y divide-gray-200 bg-white">
             <tr v-for="user in users.data" :key="user.id">
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
@@ -57,7 +57,7 @@ watch(
                     </div>
                 </td>
                 <td
-                    class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                    class="px-6 py-4 text-right text-sm font-medium whitespace-nowrap"
                 >
                     <Link
                         href="`/users/${user.id}/edit`"
