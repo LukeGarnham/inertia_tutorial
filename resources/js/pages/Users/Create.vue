@@ -78,8 +78,8 @@ let submit = function () {
                 required
             />
             <div
-                v-if="form.errors.email"
-                v-text="form.errors.email"
+                v-if="form.errors.password"
+                v-text="form.errors.password"
                 class="text-red-500 text-xs mt-1"
             ></div>
         </div>
